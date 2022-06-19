@@ -1,6 +1,7 @@
 
 'use strict';
 
+// 可以指定 MediaStream 中包含哪些类型的媒体轨（音频轨、视频轨），并且可为这些媒体轨设置一些限制。
 const mediaStreamContrains = {
     // video: true
     video: {
@@ -28,6 +29,7 @@ function handleLocalMediaStreamError(error) {
     console.log('navigator.getUserMedia error: ', error);
 }
 
+// 通过navigator.mediaDevices.getUserMedia接口访问音视频设备
 navigator.mediaDevices.getUserMedia(mediaStreamContrains).then(
     gotLocalMediaStream
 ).catch(
