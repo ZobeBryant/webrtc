@@ -29,9 +29,13 @@ function handleLocalMediaStreamError(error) {
     console.log('navigator.getUserMedia error: ', error);
 }
 
-// 通过navigator.mediaDevices.getUserMedia接口访问音视频设备
-navigator.mediaDevices.getUserMedia(mediaStreamContrains).then(
-    gotLocalMediaStream
-).catch(
-    handleLocalMediaStreamError
-);
+if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    console.log('getUserMedia is not supported!');
+} else {
+    // 通过navigator.mediaDevices.getUserMedia接口访问音视频设备
+    navigator.mediaDevices.getUserMedia(mediaStreamContrains).then(
+        gotLocalMediaStream
+    ).catch(
+        handleLocalMediaStreamError
+    );
+}
