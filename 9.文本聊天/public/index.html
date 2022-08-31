@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>WebRTC PeerConnection</title>
+		<link href="./css/main.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div>
+
+			<div>
+				<button id="connserver">Connect Sig Server</button>
+				<button id="leave" disabled>Leave</button>	
+			</div>
+
+			<div class="preview">
+				<div>
+					<h2>Chat:</h2>
+					<textarea id="chat" disabled></textarea>
+					<textarea id="sendtxt" disabled></textarea>
+					<button id="send" disabled>Send</button>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+		<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+		<script src="js/main_bw.js"></script>
+	</body>
+</html>
